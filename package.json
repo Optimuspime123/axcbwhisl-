@@ -1,0 +1,20 @@
+{
+  "name": "gradio-client-example",
+  "version": "1.0.0",
+  "description": "A simple example using @gradio/client",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "@gradio/client": "^latest"
+  },
+  "devDependencies": {
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0",
+    "serve": "^11.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
