@@ -1,12 +1,17 @@
-import { client } from "@gradio/client";
-
-const response_0 = await fetch("https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav");
-const exampleAudio = await response_0.blob();
-						
-const app = await client("https://sanchit-gandhi-whisper-large-v2.hf.space/");
-const result = await app.predict("/predict", [
-				exampleAudio, 	// blob in 'inputs' Audio component		
-				"transcribe", // string  in 'Task' Radio component
-	]);
-
-console.log(result.data);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradio Client Example</title>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <form id="audioForm">
+        <label for="audioUrl">Enter Audio File URL:</label>
+        <input type="url" id="audioUrl" name="audioUrl" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+</body>
+</html>
